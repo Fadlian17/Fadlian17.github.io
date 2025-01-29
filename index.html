@@ -86,7 +86,7 @@
                 <div class="skills__container bd-grid">          
                     <div>
                         <h2 class="skills__subtitle">Profesional Skills</h2>
-                        <p class="skills__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit optio id vero amet, alias architecto consectetur error eum eaque sit.</p>
+                        <p class="skills__text">As a QA (Quality Assurance) Engineer, there are several professional skills that are essential to ensure the quality and reliability of software products</p>
                         <div class="skills__data">
                             <div class="skills__names">
                                 <i class='bx bxl-html5 skills__icon'></i>
@@ -169,19 +169,20 @@
                 </div>
             </section>
 
-            <!--===== CONTACT =====-->
-            <section class="contact section" id="contact">
-                <h2 class="section-title">Contact</h2>
+<!--===== CONTACT =====-->
+<section class="contact section" id="contact">
+    <h2 class="section-title">Contact</h2>
 
-                <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input" placeholder="Subject"></textarea>
-                        <input type="button" value="Send To Me" class="contact__button button">
-                    </form>
-                </div>
-            </section>
+    <div class="contact__container bd-grid">
+        <form action="/send-email" method="POST" class="contact__form">
+            <input type="text" name="name" placeholder="Name" class="contact__input" required>
+            <input type="email" name="email" placeholder="Email" class="contact__input" required>
+            <textarea name="subject" cols="0" rows="10" class="contact__input" placeholder="Subject" required></textarea>
+            <input type="submit" value="Send To Me" class="contact__button button">
+        </form>
+    </div>
+</section>
+
         </main>
 
         <!--===== FOOTER =====-->
