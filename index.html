@@ -31,6 +31,7 @@
 
                 <div class="nav__actions">
                     <button id="language-toggle" class="language-toggle" aria-label="Toggle language">
+                        <span class="flag-icon flag-icon-gb" id="flag-icon"></span>
                         <span class="lang-text">EN</span>
                     </button>
                     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><i class='bx bx-moon'></i></button>
@@ -208,24 +209,24 @@
                     <div class="work__img" data-project="1">
                         <img src="assets/img/work1.jpg" alt="Work 1">
                         <div class="work__overlay">
-                            <span data-translate="work.viewDetails">View Details</span>
+                            <span>Test Management Platform</span>
                             <button class="work__btn" onclick="openProjectModal(1)">View Details</button>
                         </div>
                     </div>
                     <div class="work__img" data-project="2">
                         <img src="assets/img/work2.jpg" alt="Work 2">
                         <div class="work__overlay">
-                            <span data-translate="work.viewDetails">View Details</span>
+                            <span>Selenium API Automation</span>
                             <button class="work__btn" onclick="openProjectModal(2)">View Details</button>
                         </div>
                     </div>
                     <div class="work__img" data-project="3">
                         <img src="assets/img/work3.jpg" alt="Work 3">
                         <div class="work__overlay">
-                            <span data-translate="work.viewDetails">View Details</span>
+                            <span>Full Stack Frontend With Cypress</span>
                             <button class="work__btn" onclick="openProjectModal(3)">View Details</button>
                         </div>
-                    </div>
+                    </div>  
                 </div>
             </section>
 
@@ -397,7 +398,7 @@
             });
 
             // Update typed.js strings
-            if (window.typed) {
+            if (window.typed && typeof window.typed.destroy === 'function') {
                 const typedStrings = lang === 'en' 
                     ? ['QA Engineer', 'Product Enthusiast', 'Tech Explorer']
                     : ['QA Engineer', 'Pecinta Produk', 'Penjelajah Teknologi'];
@@ -411,8 +412,12 @@
                 });
             }
 
-            // Update language toggle text
+            // Update language toggle text and flag
             document.querySelector('.lang-text').textContent = lang.toUpperCase();
+            const flagIcon = document.getElementById('flag-icon');
+            if (flagIcon) {
+                flagIcon.className = lang === 'en' ? 'flag-icon flag-icon-gb' : 'flag-icon flag-icon-id';
+            }
         }
 
         // Language toggle functionality
@@ -429,10 +434,16 @@
         if (savedLang) {
             currentLang = savedLang;
             translateContent(currentLang);
+        } else {
+            // Initialize flag for default language
+            const flagIcon = document.getElementById('flag-icon');
+            if (flagIcon) {
+                flagIcon.className = 'flag-icon flag-icon-gb';
+            }
         }
 
-        // Project data
-        const projects = {
+        // Project data - make globally accessible
+        window.projects = {
             1: {
                 title: "Test Management Platform",
                 description: "A web application for managing QA testing processes, including test case creation, execution, and reporting. Features include user authentication, role management, and real-time collaboration.",
@@ -468,9 +479,9 @@
             }
         };
 
-        // Modal functions
-        function openProjectModal(projectId) {
-            const project = projects[projectId];
+        // Modal functions - make globally accessible
+        window.openProjectModal = function(projectId) {
+            const project = window.projects[projectId];
             if (!project) return;
 
             document.getElementById('modalTitle').textContent = project.title;
@@ -502,25 +513,25 @@
 
             document.getElementById('projectModal').style.display = 'block';
             document.body.style.overflow = 'hidden';
-        }
+        };
 
-        function closeProjectModal() {
+        window.closeProjectModal = function() {
             document.getElementById('projectModal').style.display = 'none';
             document.body.style.overflow = 'auto';
-        }
+        };
 
         // Close modal when clicking outside
         window.onclick = function(event) {
             const modal = document.getElementById('projectModal');
             if (event.target === modal) {
-                closeProjectModal();
+                window.closeProjectModal();
             }
         }
 
         // Close modal with Escape key
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
-                closeProjectModal();
+                window.closeProjectModal();
             }
         });
 
@@ -572,30 +583,7 @@
                 item.querySelector('.work__overlay').style.opacity = 0;
             });
         });
-        // Contact form validation
-        const contactForm = document.getElementById('contactForm');
-        const formMessage = document.getElementById('form-message');
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            let valid = true;
-            contactForm.querySelectorAll('.contact__input').forEach(input => {
-                if (!input.value) {
-                    valid = false;
-                    input.classList.add('input-error');
-                } else {
-                    input.classList.remove('input-error');
-                }
-            });
-            if (valid) {
-                formMessage.textContent = 'Thank you for contacting me!';
-                formMessage.classList.add('success');
-                contactForm.reset();
-            } else {
-                formMessage.textContent = 'Please fill in all fields.';
-                formMessage.classList.add('error');
-            }
-            setTimeout(() => { formMessage.textContent = ''; formMessage.className = 'form-message'; }, 3000);
-        });
+
         </script>
     </body>
 </html>
