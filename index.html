@@ -9,6 +9,11 @@
         <!-- =====BOX ICONS===== -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
+        <!-- =====FAVICON===== -->
+        <link rel="icon" type="image/png" href="assets/img/profil-fd.png">
+        <link rel="apple-touch-icon" href="assets/img/profil-fd.png">
+        <link rel="shortcut icon" href="assets/img/profil-fd.png">
+
         <title>Fadli | Portfolio</title>
     </head>
     <body>
@@ -244,15 +249,15 @@
                         </div>
                         <div class="project-modal__info">
                             <div class="project-modal__description">
-                                <h3>Description</h3>
+                                <h3 data-translate="modal.description">Description</h3>
                                 <p id="modalDescription">Project description will appear here.</p>
                             </div>
                             <div class="project-modal__tech">
-                                <h3>Technologies Used</h3>
+                                <h3 data-translate="modal.technologies">Technologies Used</h3>
                                 <div id="modalTech" class="tech-stack"></div>
                             </div>
                             <div class="project-modal__links">
-                                <h3>Links</h3>
+                                <h3 data-translate="modal.links">Links</h3>
                                 <div class="project-links" id="modalLinks">
                                     <a href="#" class="project-link" target="_blank" rel="noopener">
                                         <i class='bx bx-link-external'></i> Live Demo
@@ -334,6 +339,13 @@
                     title: "Work",
                     viewDetails: "View Details"
                 },
+                modal: {
+                    description: "Description",
+                    technologies: "Technologies Used",
+                    links: "Links",
+                    liveDemo: "Live Demo",
+                    sourceCode: "Source Code"
+                },
                 contact: {
                     title: "Contact",
                     button: "Send Email"
@@ -365,6 +377,13 @@
                 work: {
                     title: "Karya",
                     viewDetails: "Lihat Detail"
+                },
+                modal: {
+                    description: "Deskripsi",
+                    technologies: "Teknologi yang Digunakan",
+                    links: "Tautan",
+                    liveDemo: "Demo Langsung",
+                    sourceCode: "Kode Sumber"
                 },
                 contact: {
                     title: "Kontak",
@@ -418,6 +437,35 @@
             if (flagIcon) {
                 flagIcon.className = lang === 'en' ? 'flag-icon flag-icon-gb' : 'flag-icon flag-icon-id';
             }
+
+            // Update modal links if modal is open
+            const modal = document.getElementById('projectModal');
+            if (modal && modal.style.display === 'block') {
+                const linksContainer = document.getElementById('modalLinks');
+                if (linksContainer) {
+                    const liveDemoText = lang === 'en' ? 'Live Demo' : 'Demo Langsung';
+                    const sourceCodeText = lang === 'en' ? 'Source Code' : 'Kode Sumber';
+                    
+                    const links = linksContainer.querySelectorAll('.project-link');
+                    if (links.length >= 2) {
+                        links[0].innerHTML = `<i class='bx bx-link-external'></i> ${liveDemoText}`;
+                        links[1].innerHTML = `<i class='bx bxl-github'></i> ${sourceCodeText}`;
+                    }
+                }
+                
+                // Update modal description if modal is open
+                const modalDescription = document.getElementById('modalDescription');
+                if (modalDescription) {
+                    // Find current project by checking modal title
+                    const modalTitle = document.getElementById('modalTitle').textContent;
+                    const currentProject = Object.values(window.projects).find(p => p.title === modalTitle);
+                    
+                    if (currentProject && typeof currentProject.description === 'object') {
+                        const description = currentProject.description[lang] || currentProject.description.en;
+                        modalDescription.textContent = description;
+                    }
+                }
+            }
         }
 
         // Language toggle functionality
@@ -446,10 +494,13 @@
         window.projects = {
             1: {
                 title: "Test Management Platform",
-                description: "A web application for managing QA testing processes, including test case creation, execution, and reporting. Features include user authentication, role management, and real-time collaboration.",
+                description: {
+                    en: "A web application for managing QA testing processes, including test case creation, execution, and reporting. Features include user authentication, role management, and real-time collaboration.",
+                    id: "Aplikasi web untuk mengelola proses pengujian QA, termasuk pembuatan test case, eksekusi, dan pelaporan. Fitur meliputi autentikasi pengguna, manajemen peran, dan kolaborasi real-time."
+                },
                 image: "assets/img/work1.jpg",
                 tags: ["Web App", "Test Management"],
-                tech: ["Javascript", "Node.js", "HTML", "GEN AI"],
+                tech: ["Javascript", "Node.js", "HTML", "Vibe Code"],
                 links: {
                     demo: "https://qatcmt.netlify.app/",
                     github: "https://github.com/Fadlian17/QA-TESTMANAGEMENT"
@@ -457,7 +508,10 @@
             },
             2: {
                 title: "Selenium API Automation",
-                description: "A Selenium-based API automation project that tests web applications for functionality, performance, and security. Includes automated test scripts, reporting.",
+                description: {
+                    en: "A Selenium-based API automation project that tests web applications for functionality, performance, and security. Includes automated test scripts, reporting.",
+                    id: "Proyek otomasi API berbasis Selenium yang menguji aplikasi web untuk fungsionalitas, kinerja, dan keamanan. Termasuk script test otomatis dan pelaporan."
+                },
                 image: "assets/img/work2.jpg",
                 tags: ["API", "Automation"],
                 tech: ["Python", "Selenium", "Cucumber", "Postman", "Rest API"],
@@ -468,7 +522,10 @@
             },
             3: {
                 title: "Full Stack Frontend With Cypress",
-                description: "A full-stack web application with a focus on frontend development using Cypress for end-to-end testing. Features include user authentication, dynamic content loading, and responsive design.",
+                description: {
+                    en: "A full-stack web application with a focus on frontend development using Cypress for end-to-end testing. Features include user authentication, dynamic content loading, and responsive design.",
+                    id: "Aplikasi web full-stack dengan fokus pada pengembangan frontend menggunakan Cypress untuk pengujian end-to-end. Fitur meliputi autentikasi pengguna, pemuatan konten dinamis, dan desain responsif."
+                },
                 image: "assets/img/work3.jpg",
                 tags: ["Automation", "Frontend"],
                 tech: ["Javascript", "Cypress", "HTML", "CSS"],
@@ -486,7 +543,12 @@
 
             document.getElementById('modalTitle').textContent = project.title;
             document.getElementById('modalImage').src = project.image;
-            document.getElementById('modalDescription').textContent = project.description;
+            
+            // Set description based on current language
+            const description = typeof project.description === 'object' 
+                ? project.description[currentLang] || project.description.en 
+                : project.description;
+            document.getElementById('modalDescription').textContent = description;
 
             // Set tags
             const tagsContainer = document.getElementById('modalTags');
@@ -502,12 +564,15 @@
 
             // Set links
             const linksContainer = document.getElementById('modalLinks');
+            const liveDemoText = currentLang === 'en' ? 'Live Demo' : 'Demo Langsung';
+            const sourceCodeText = currentLang === 'en' ? 'Source Code' : 'Kode Sumber';
+            
             linksContainer.innerHTML = `
                 <a href="${project.links.demo}" class="project-link" target="_blank" rel="noopener">
-                    <i class='bx bx-link-external'></i> Live Demo
+                    <i class='bx bx-link-external'></i> ${liveDemoText}
                 </a>
                 <a href="${project.links.github}" class="project-link" target="_blank" rel="noopener">
-                    <i class='bx bxl-github'></i> Source Code
+                    <i class='bx bxl-github'></i> ${sourceCodeText}
                 </a>
             `;
 
