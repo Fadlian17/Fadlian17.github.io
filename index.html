@@ -21,19 +21,20 @@
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                        <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                        <li class="nav__item"><a href="#home" class="nav__link active" data-translate="nav.home">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link" data-translate="nav.about">About</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link" data-translate="nav.skills">Skills</a></li>
+                        <li class="nav__item"><a href="#work" class="nav__link" data-translate="nav.work">Work</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link" data-translate="nav.contact">Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="nav__actions">
+                    <button id="language-toggle" class="language-toggle" aria-label="Toggle language">
+                        <span class="lang-text">EN</span>
+                    </button>
                     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><i class='bx bx-moon'></i></button>
-                    <div class="nav__toggle" id="nav-toggle">
-                        <i class='bx bx-menu'></i>
-                    </div>
+                    <div class="nav__toggle" id="nav-toggle"><i class='bx bx-menu'></i></div>
                 </div>
             </nav>
         </header>
@@ -42,9 +43,9 @@
             <!--===== HOME =====-->
             <section class="home bd-grid" id="home">
                 <div class="home__data">
-                    <h1 class="home__title">Hi,<br>I'm <span class="home__title-color">Fadli</span><br><span id="typed"></span></h1>
+                    <h1 class="home__title" data-translate="home.title">Hi,<br>I'm <span class="home__title-color">Fadli</span><br><span id="typed"></span></h1>
 
-                    <a href="#contact" class="button home__button">Contact Me</a>
+                    <a href="https://docs.google.com/presentation/d/1mkxS0EuBzS3jQSQIkUGeYLoxGn5zZIgAPgYaNjb-85E/edit?usp=sharing" class="button home__button" data-translate="home.button">My Journey</a>
                 </div>
 
                 <div class="home__social">
@@ -68,7 +69,7 @@
 
             <!--===== ABOUT =====-->
             <section class="about section" id="about">
-                <h2 class="section-title">About</h2>
+                <h2 class="section-title" data-translate="about.title">About</h2>
 
                 <div class="about__container bd-grid glass-card">
                     <div class="about__img">
@@ -76,19 +77,19 @@
                     </div>
                     
                     <div>
-                        <h2 class="about__subtitle">I'm Fadli</h2>
-                        <p class="about__text">Best regards, I am Fadli, currently working as a quality assurance tester at a financial technology company. I am passionate about data, technology, and products, striving to deliver quality and useful solutions.</p>           
+                        <h2 class="about__subtitle" data-translate="about.subtitle">I'm Fadli</h2>
+                        <p class="about__text" data-translate="about.text">Best regards, I am Fadli, currently working as a quality assurance tester at a financial technology company. I am passionate about data, technology, and products, striving to deliver quality and useful solutions.</p>           
                     </div>                                   
                 </div>
             </section>
 
             <!--===== SKILLS =====-->
             <section class="skills section" id="skills">
-                <h2 class="section-title">Skills</h2>
+                <h2 class="section-title" data-translate="skills.title">Skills</h2>
                 <div class="skills__container bd-grid">          
                     <div>
-                        <h2 class="skills__subtitle">Professional Skills</h2>
-                        <p class="skills__text">As a QA Engineer, I specialize in ensuring software quality through comprehensive testing methodologies and tools. Here are my core competencies:</p>
+                        <h2 class="skills__subtitle" data-translate="skills.subtitle">Professional Skills</h2>
+                        <p class="skills__text" data-translate="skills.text">As a QA Engineer, I specialize in ensuring software quality through comprehensive testing methodologies and tools. Here are my core competencies:</p>
                         <div class="skills__data">
                             <div class="skills__names">
                                 <i class='bx bx-bug skills__icon'></i>
@@ -158,7 +159,7 @@
 
                 <!--===== TECHNICAL TOOLS =====-->
                 <div class="tools__container bd-grid">
-                    <h3 class="tools__subtitle">Testing Tools & Technologies</h3>
+                    <h3 class="tools__subtitle" data-translate="skills.tools">Testing Tools & Technologies</h3>
                     <div class="tools__grid">
                         <div class="tool__item">
                             <i class='bx bxl-selenium'></i>
@@ -169,16 +170,8 @@
                             <span>Postman</span>
                         </div>
                         <div class="tool__item">
-                            <i class='bx bx-test-tube'></i>
-                            <span>JUnit</span>
-                        </div>
-                        <div class="tool__item">
                             <i class='bx bx-data'></i>
                             <span>MySQL</span>
-                        </div>
-                        <div class="tool__item">
-                            <i class='bx bx-mobile'></i>
-                            <span>Appium</span>
                         </div>
                         <div class="tool__item">
                             <i class='bx bx-git-branch'></i>
@@ -204,58 +197,33 @@
                             <i class='bx bx-code-block'></i>
                             <span>Cucumber</span>
                         </div>
-                        <div class="tool__item">
-                            <i class='bx bx-test-tube'></i>
-                            <span>TestNG</span>
-                        </div>
                     </div>
                 </div>
             </section>
 
             <!--===== WORK =====-->
             <section class="work section" id="work">
-                <h2 class="section-title">Work</h2>
+                <h2 class="section-title" data-translate="work.title">Work</h2>
                 <div class="work__container bd-grid">
                     <div class="work__img" data-project="1">
                         <img src="assets/img/work1.jpg" alt="Work 1">
                         <div class="work__overlay">
-                            <span>Project 1</span>
+                            <span data-translate="work.viewDetails">View Details</span>
                             <button class="work__btn" onclick="openProjectModal(1)">View Details</button>
                         </div>
                     </div>
                     <div class="work__img" data-project="2">
                         <img src="assets/img/work2.jpg" alt="Work 2">
                         <div class="work__overlay">
-                            <span>Project 2</span>
+                            <span data-translate="work.viewDetails">View Details</span>
                             <button class="work__btn" onclick="openProjectModal(2)">View Details</button>
                         </div>
                     </div>
                     <div class="work__img" data-project="3">
                         <img src="assets/img/work3.jpg" alt="Work 3">
                         <div class="work__overlay">
-                            <span>Project 3</span>
+                            <span data-translate="work.viewDetails">View Details</span>
                             <button class="work__btn" onclick="openProjectModal(3)">View Details</button>
-                        </div>
-                    </div>
-                    <div class="work__img" data-project="4">
-                        <img src="assets/img/work4.jpg" alt="Work 4">
-                        <div class="work__overlay">
-                            <span>Project 4</span>
-                            <button class="work__btn" onclick="openProjectModal(4)">View Details</button>
-                        </div>
-                    </div>
-                    <div class="work__img" data-project="5">
-                        <img src="assets/img/work5.jpg" alt="Work 5">
-                        <div class="work__overlay">
-                            <span>Project 5</span>
-                            <button class="work__btn" onclick="openProjectModal(5)">View Details</button>
-                        </div>
-                    </div>
-                    <div class="work__img" data-project="6">
-                        <img src="assets/img/work6.jpg" alt="Work 6">
-                        <div class="work__overlay">
-                            <span>Project 6</span>
-                            <button class="work__btn" onclick="openProjectModal(6)">View Details</button>
                         </div>
                     </div>
                 </div>
@@ -300,10 +268,10 @@
 
 <!--===== CONTACT =====-->
 <section class="contact section" id="contact">
-    <h2 class="section-title">Contact</h2>
+    <h2 class="section-title" data-translate="contact.title">Contact</h2>
     <div class="contact__container bd-grid">
         <div class="contact__card">
-            <a href="mailto:alfansyahfadlian@gmail.com" target="_blank" class="contact__button button">
+            <a href="mailto:alfansyahfadlian@gmail.com" target="_blank" class="contact__button button" data-translate="contact.button">
                 Kirim Email
             </a>
         </div>
@@ -336,72 +304,166 @@
 
         <!--===== CUSTOM SCRIPTS =====-->
         <script>
+        // Translation data
+        const translations = {
+            en: {
+                nav: {
+                    home: "Home",
+                    about: "About",
+                    skills: "Skills",
+                    work: "Work",
+                    contact: "Contact"
+                },
+                home: {
+                    title: "Hi,<br>I'm <span class='home__title-color'>Fadli</span><br><span id='typed'></span>",
+                    button: "My Journey"
+                },
+                about: {
+                    title: "About",
+                    subtitle: "I'm Fadli",
+                    text: "Best regards, I am Fadli, currently working as a quality assurance tester at a financial technology company. I am passionate about data, technology, and products, striving to deliver quality and useful solutions."
+                },
+                skills: {
+                    title: "Skills",
+                    subtitle: "Professional Skills",
+                    text: "As a QA Engineer, I specialize in ensuring software quality through comprehensive testing methodologies and tools. Here are my core competencies:",
+                    tools: "Testing Tools & Technologies"
+                },
+                work: {
+                    title: "Work",
+                    viewDetails: "View Details"
+                },
+                contact: {
+                    title: "Contact",
+                    button: "Send Email"
+                }
+            },
+            id: {
+                nav: {
+                    home: "Beranda",
+                    about: "Tentang",
+                    skills: "Keahlian",
+                    work: "Karya",
+                    contact: "Kontak"
+                },
+                home: {
+                    title: "Hai,<br>Saya <span class='home__title-color'>Fadli</span><br><span id='typed'></span>",
+                    button: "Perjalanan Saya"
+                },
+                about: {
+                    title: "Tentang",
+                    subtitle: "Saya Fadli",
+                    text: "Salam, saya Fadli, saat ini bekerja sebagai quality assurance tester di perusahaan teknologi finansial. Saya sangat tertarik dengan bidang data, teknologi, dan produk, sehingga dapat menghasilkan produk yang berkualitas dan bermanfaat."
+                },
+                skills: {
+                    title: "Keahlian",
+                    subtitle: "Keahlian Profesional",
+                    text: "Sebagai QA Engineer, saya mengkhususkan diri dalam memastikan kualitas perangkat lunak melalui metodologi dan alat pengujian yang komprehensif. Berikut adalah kompetensi inti saya:",
+                    tools: "Alat & Teknologi Testing"
+                },
+                work: {
+                    title: "Karya",
+                    viewDetails: "Lihat Detail"
+                },
+                contact: {
+                    title: "Kontak",
+                    button: "Kirim Email"
+                }
+            }
+        };
+
+        // Current language
+        let currentLang = 'en';
+
+        // Function to translate content
+        function translateContent(lang) {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                const keys = key.split('.');
+                let value = translations[lang];
+                
+                for (const k of keys) {
+                    value = value[k];
+                }
+                
+                if (value) {
+                    if (element.tagName === 'INPUT' && element.type === 'placeholder') {
+                        element.placeholder = value;
+                    } else {
+                        element.innerHTML = value;
+                    }
+                }
+            });
+
+            // Update typed.js strings
+            if (window.typed) {
+                const typedStrings = lang === 'en' 
+                    ? ['QA Engineer', 'Product Enthusiast', 'Tech Explorer']
+                    : ['QA Engineer', 'Pecinta Produk', 'Penjelajah Teknologi'];
+                
+                window.typed.destroy();
+                window.typed = new Typed('#typed', {
+                    strings: typedStrings,
+                    typeSpeed: 60,
+                    backSpeed: 40,
+                    loop: true
+                });
+            }
+
+            // Update language toggle text
+            document.querySelector('.lang-text').textContent = lang.toUpperCase();
+        }
+
+        // Language toggle functionality
+        document.getElementById('language-toggle').addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'id' : 'en';
+            translateContent(currentLang);
+            
+            // Save language preference
+            localStorage.setItem('preferred-language', currentLang);
+        });
+
+        // Load saved language preference
+        const savedLang = localStorage.getItem('preferred-language');
+        if (savedLang) {
+            currentLang = savedLang;
+            translateContent(currentLang);
+        }
+
         // Project data
         const projects = {
             1: {
-                title: "E-Commerce Platform",
-                description: "A comprehensive e-commerce platform built with modern web technologies. Features include user authentication, product catalog, shopping cart, payment integration, and admin dashboard for managing products and orders.",
+                title: "Test Management Platform",
+                description: "A web application for managing QA testing processes, including test case creation, execution, and reporting. Features include user authentication, role management, and real-time collaboration.",
                 image: "assets/img/work1.jpg",
-                tags: ["Web App", "E-Commerce"],
-                tech: ["React", "Node.js", "MongoDB", "Stripe"],
+                tags: ["Web App", "Test Management"],
+                tech: ["Javascript", "Node.js", "HTML", "GEN AI"],
                 links: {
-                    demo: "https://demo-ecommerce.com",
-                    github: "https://github.com/username/ecommerce-app"
+                    demo: "https://qatcmt.netlify.app/",
+                    github: "https://github.com/Fadlian17/QA-TESTMANAGEMENT"
                 }
             },
             2: {
-                title: "Task Management App",
-                description: "A collaborative task management application with real-time updates, team collaboration features, and progress tracking. Includes drag-and-drop functionality and deadline management.",
+                title: "Selenium API Automation",
+                description: "A Selenium-based API automation project that tests web applications for functionality, performance, and security. Includes automated test scripts, reporting.",
                 image: "assets/img/work2.jpg",
-                tags: ["Web App", "Productivity"],
-                tech: ["Vue.js", "Firebase", "Vuex", "CSS3"],
+                tags: ["API", "Automation"],
+                tech: ["Python", "Selenium", "Cucumber", "Postman", "Rest API"],
                 links: {
-                    demo: "https://task-app-demo.com",
-                    github: "https://github.com/username/task-manager"
+                    demo: "https://github.com/Fadlian17/Selenium-API",
+                    github: "https://github.com/Fadlian17/Selenium-API"
                 }
             },
             3: {
-                title: "Portfolio Website",
-                description: "A modern, responsive portfolio website showcasing professional work and skills. Features smooth animations, dark mode toggle, and optimized for all devices.",
+                title: "Full Stack Frontend With Cypress",
+                description: "A full-stack web application with a focus on frontend development using Cypress for end-to-end testing. Features include user authentication, dynamic content loading, and responsive design.",
                 image: "assets/img/work3.jpg",
-                tags: ["Website", "Portfolio"],
-                tech: ["HTML5", "CSS3", "JavaScript", "SCSS"],
+                tags: ["Automation", "Frontend"],
+                tech: ["Javascript", "Cypress", "HTML", "CSS"],
                 links: {
-                    demo: "https://portfolio-demo.com",
-                    github: "https://github.com/username/portfolio"
-                }
-            },
-            4: {
-                title: "Weather Dashboard",
-                description: "A weather application that provides real-time weather information, forecasts, and interactive maps. Includes location-based services and weather alerts.",
-                image: "assets/img/work4.jpg",
-                tags: ["Web App", "Weather"],
-                tech: ["JavaScript", "Weather API", "Chart.js", "Bootstrap"],
-                links: {
-                    demo: "https://weather-dashboard.com",
-                    github: "https://github.com/username/weather-app"
-                }
-            },
-            5: {
-                title: "Blog Platform",
-                description: "A content management system for blogs with rich text editor, SEO optimization, and analytics dashboard. Supports multiple authors and categories.",
-                image: "assets/img/work5.jpg",
-                tags: ["Web App", "CMS"],
-                tech: ["PHP", "MySQL", "JavaScript", "Bootstrap"],
-                links: {
-                    demo: "https://blog-platform.com",
-                    github: "https://github.com/username/blog-cms"
-                }
-            },
-            6: {
-                title: "Mobile App Design",
-                description: "UI/UX design for a fitness tracking mobile application. Includes wireframes, prototypes, and design system with focus on user experience and accessibility.",
-                image: "assets/img/work6.jpg",
-                tags: ["Design", "Mobile"],
-                tech: ["Figma", "Adobe XD", "Sketch", "Prototyping"],
-                links: {
-                    demo: "https://behance.net/project/fitness-app",
-                    github: "https://dribbble.com/shots/fitness-app-design"
+                    demo: "https://github.com/Fadlian17/QA-FullStack-Cypress",
+                    github: "https://github.com/Fadlian17/QA-FullStack-Cypress"
                 }
             }
         };
@@ -470,7 +532,7 @@
             themeToggle.innerHTML = body.classList.contains('dark-mode') ? "<i class='bx bx-sun'></i>" : "<i class='bx bx-moon'></i>";
         });
         // Animated typing
-        new Typed('#typed', {
+        window.typed = new Typed('#typed', {
             strings: ['QA Engineer', 'Product Enthusiast', 'Tech Explorer'],
             typeSpeed: 60,
             backSpeed: 40,

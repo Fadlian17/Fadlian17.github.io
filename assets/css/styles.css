@@ -1060,3 +1060,30 @@ body.dark-mode .contact__button.button:hover {
     max-width: 98vw;
   }
 }
+
+/* ===== LANGUAGE TOGGLE BUTTON ===== */
+.language-toggle {
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 1rem;
+  color: var(--second-color);
+  transition: color 0.3s;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+  background: rgba(255,255,255,0.1);
+}
+.language-toggle:hover {
+  background: rgba(255,255,255,0.2);
+  color: var(--first-color);
+}
+body.dark-mode .language-toggle {
+  color: #8ab4f8;
+  background: rgba(138,180,248,0.1);
+}
+body.dark-mode .language-toggle:hover {
+  background: rgba(138,180,248,0.2);
+  color: #f5f6fa;
+}
