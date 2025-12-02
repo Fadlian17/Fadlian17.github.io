@@ -231,7 +231,14 @@
                             <span>Full Stack Frontend With Cypress</span>
                             <button class="work__btn" onclick="openProjectModal(3)">View Details</button>
                         </div>
-                    </div>  
+                    </div>
+                    <div class="work__img" data-project="4">
+                        <img src="assets/img/work4.jpg" alt="Work 4">
+                        <div class="work__overlay">
+                            <span>Robot Automation Mobile Apps & Web Apps</span>
+                            <button class="work__btn" onclick="openProjectModal(4)">View Details</button>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -307,6 +314,9 @@
 
         <!--===== TYPED JS =====-->
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+        <!--===== GSAP =====-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
         <!--===== CUSTOM SCRIPTS =====-->
         <script>
@@ -533,6 +543,20 @@
                     demo: "https://github.com/Fadlian17/QA-FullStack-Cypress",
                     github: "https://github.com/Fadlian17/QA-FullStack-Cypress"
                 }
+            },            
+            4: {
+                title: "Robot Automation Mobile Apps & Web Apps",
+                description: {
+                    en: "Robot Automation For Mobile Apps & Web Apps using Appium Library with Python language. This project focuses on automating test cases for both mobile and web applications to ensure quality and performance.",
+                    id: "Aplikasi Robot Automation Untuk Mobile Apps & Web Apps menggunakan Appium Library dengan bahasa Python. Proyek ini berfokus pada otomasi test case untuk aplikasi mobile dan web guna memastikan kualitas dan kinerja."
+                },
+                image: "assets/img/work4.jpg",
+                tags: ["Automation", "Frontend","Robot"],
+                tech: ["Robot", "Appium","Python"],
+                links: {
+                    demo: "https://drive.google.com/file/d/161wMj-z0LYZJREVY-5EDY4KUb103BSN8/view",
+                    github: "https://github.com/Fadlian17/QA-RobotFramework"
+                }
             }
         };
 
@@ -649,6 +673,12 @@
             });
         });
 
+        // GSAP basic animation example
+        window.addEventListener('DOMContentLoaded', function() {
+            gsap.from('.home__title', { duration: 1, y: -50, opacity: 0, ease: 'power2.out' });
+            gsap.from('.home__img', { duration: 1, x: 100, opacity: 0, delay: 0.5, ease: 'power2.out' });
+            gsap.from('.home__social a', { duration: 1, y: 30, opacity: 0, stagger: 0.2, delay: 1, ease: 'power2.out' });
+        });
         </script>
     </body>
 </html>
