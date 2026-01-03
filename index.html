@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="assets/css/styles.min.css">
 
         <!-- =====BOX ICONS===== -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
@@ -30,6 +30,7 @@
                         <li class="nav__item"><a href="#about" class="nav__link" data-translate="nav.about">About</a></li>
                         <li class="nav__item"><a href="#skills" class="nav__link" data-translate="nav.skills">Skills</a></li>
                         <li class="nav__item"><a href="#work" class="nav__link" data-translate="nav.work">Work</a></li>
+                        <li class="nav__item"><a href="#blog" class="nav__link" data-translate="nav.blog">Blog</a></li>
                         <li class="nav__item"><a href="#contact" class="nav__link" data-translate="nav.contact">Contact</a></li>
                     </ul>
                 </div>
@@ -79,7 +80,7 @@
 
                 <div class="about__container bd-grid glass-card">
                     <div class="about__img">
-                        <img src="assets/img/profil-fd.png" alt="Fadli profile photo">
+                        <img src="assets/img/profil-fd.png" alt="Fadli profile photo" loading="lazy">
                     </div>
                     
                     <div>
@@ -159,7 +160,7 @@
                     </div>
                     
                     <div>              
-                        <img src="assets/img/work3.jpg" alt="QA Testing illustration" class="skills__img">
+                        <img src="assets/img/work3.jpg" alt="QA Testing illustration" class="skills__img" loading="lazy">
                     </div>
                 </div>
 
@@ -212,28 +213,28 @@
                 <h2 class="section-title" data-translate="work.title">Work</h2>
                 <div class="work__container bd-grid">
                     <div class="work__img" data-project="1">
-                        <img src="assets/img/work1.jpg" alt="Work 1">
+                        <img src="assets/img/work1.jpg" alt="Work 1" loading="lazy">
                         <div class="work__overlay">
                             <span>Test Management Platform</span>
                             <button class="work__btn" onclick="openProjectModal(1)">View Details</button>
                         </div>
                     </div>
                     <div class="work__img" data-project="2">
-                        <img src="assets/img/work2.jpg" alt="Work 2">
+                        <img src="assets/img/work2.jpg" alt="Work 2" loading="lazy">
                         <div class="work__overlay">
                             <span>Selenium API Automation</span>
                             <button class="work__btn" onclick="openProjectModal(2)">View Details</button>
                         </div>
                     </div>
                     <div class="work__img" data-project="3">
-                        <img src="assets/img/work3.jpg" alt="Work 3">
+                        <img src="assets/img/work3.jpg" alt="Work 3" loading="lazy">
                         <div class="work__overlay">
                             <span>Full Stack Frontend With Cypress</span>
                             <button class="work__btn" onclick="openProjectModal(3)">View Details</button>
                         </div>
                     </div>
                     <div class="work__img" data-project="4">
-                        <img src="assets/img/work4.jpg" alt="Work 4">
+                        <img src="assets/img/work4.jpg" alt="Work 4" loading="lazy">
                         <div class="work__overlay">
                             <span>Robot Automation Mobile Apps & Web Apps</span>
                             <button class="work__btn" onclick="openProjectModal(4)">View Details</button>
@@ -279,6 +280,43 @@
                 </div>
             </div>
 
+<!--===== BLOG =====-->
+<section class="blog section" id="blog">
+    <h2 class="section-title" data-translate="blog.title">Blog</h2>
+    <div class="blog__container bd-grid">
+        <article class="blog__card glass-card">
+            <div class="blog__img">
+                <img src="assets/img/blog1.jpg" alt="Introduction to QA Automation" loading="lazy">
+            </div>
+            <div class="blog__content">
+                <h3 class="blog__title">Introduction to QA Automation</h3>
+                <p class="blog__description">Learn the basics of QA automation and how it can improve your testing process.</p>
+                <a href="#" class="blog__link">Read More</a>
+            </div>
+        </article>
+        <article class="blog__card glass-card">
+            <div class="blog__img">
+                <img src="assets/img/blog2.jpg" alt="Best Practices in API Testing" loading="lazy">
+            </div>
+            <div class="blog__content">
+                <h3 class="blog__title">Best Practices in API Testing</h3>
+                <p class="blog__description">Discover essential tips for effective API testing in modern web applications.</p>
+                <a href="#" class="blog__link">Read More</a>
+            </div>
+        </article>
+        <article class="blog__card glass-card">
+            <div class="blog__img">
+                <img src="assets/img/blog3.jpg" alt="Mobile Testing Strategies" loading="lazy">
+            </div>
+            <div class="blog__content">
+                <h3 class="blog__title">Mobile Testing Strategies</h3>
+                <p class="blog__description">Explore strategies for comprehensive mobile app testing across different platforms.</p>
+                <a href="#" class="blog__link">Read More</a>
+            </div>
+        </article>
+    </div>
+</section>
+
 <!--===== CONTACT =====-->
 <section class="contact section" id="contact">
     <h2 class="section-title" data-translate="contact.title">Contact</h2>
@@ -310,7 +348,7 @@
         <script src="https://unpkg.com/scrollreveal"></script>
 
         <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js"></script>
+        <script src="assets/js/main.min.js"></script>
 
         <!--===== TYPED JS =====-->
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
@@ -328,6 +366,7 @@
                     about: "About",
                     skills: "Skills",
                     work: "Work",
+                    blog: "Blog",
                     contact: "Contact"
                 },
                 home: {
@@ -349,6 +388,9 @@
                     title: "Work",
                     viewDetails: "View Details"
                 },
+                blog: {
+                    title: "Blog"
+                },
                 modal: {
                     description: "Description",
                     technologies: "Technologies Used",
@@ -367,6 +409,7 @@
                     about: "Tentang",
                     skills: "Keahlian",
                     work: "Karya",
+                    blog: "Blog",
                     contact: "Kontak"
                 },
                 home: {
@@ -387,6 +430,9 @@
                 work: {
                     title: "Karya",
                     viewDetails: "Lihat Detail"
+                },
+                blog: {
+                    title: "Blog"
                 },
                 modal: {
                     description: "Deskripsi",
