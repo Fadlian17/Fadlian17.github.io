@@ -32,10 +32,13 @@ function scrollActive(){
         const sectionTop = current.offsetTop - 50;
         sectionId = current.getAttribute('id')
 
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-            document.querySelector('.sidebar a[href*=' + sectionId + ']').classList.add('active')
-        }else{
-            document.querySelector('.sidebar a[href*=' + sectionId + ']').classList.remove('active')
+        const sidebarLink = document.querySelector('.sidebar a[href*=' + sectionId + ']')
+        if(sidebarLink){
+            if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+                sidebarLink.classList.add('active')
+            }else{
+                sidebarLink.classList.remove('active')
+            }
         }
     })
 }
@@ -178,4 +181,28 @@ function initDashboardWidgets() {
 window.addEventListener('DOMContentLoaded', function() {
   // Dashboard temporarily disabled
   // setTimeout(initDashboardWidgets, 280);
+});
+
+/* ===== SCROLL REVEAL ANIMATION ===== */
+document.addEventListener('DOMContentLoaded', function() {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal');
+        // Optional: Stop observing after animation
+        // observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Observe all elements with class 'section-content'
+  const sectionContents = document.querySelectorAll('.section-content');
+  sectionContents.forEach(content => {
+    observer.observe(content);
+  });
 });
