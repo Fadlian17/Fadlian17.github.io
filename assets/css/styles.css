@@ -1247,3 +1247,70 @@ body.dark-mode .language-toggle:hover {
 .blog__link:hover {
   color: var(--second-color);
 }
+
+/* ===== Dashboard Section ===== */
+#dashboard {
+  padding: 3rem 1rem 2.5rem;
+  background: var(--bg-secondary, rgba(255,255,255,.06));
+}
+#dashboard .section-title {
+  margin-bottom: 0.35rem;
+}
+#dashboard .dashboard-subtitle {
+  color: var(--text-muted,#92a0b2);
+  margin-bottom: 1.3rem;
+  font-size: .95rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1,minmax(0,1fr));
+}
+@media (min-width: 900px) {
+  .dashboard-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (min-width: 1200px) {
+  .dashboard-grid { grid-template-columns: repeat(4,minmax(0,1fr)); }
+}
+
+.dashboard-card {
+  background: var(--card-bg, #ffffff);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(7, 13, 27, 0.08);
+  padding: 1rem 1rem 0.85rem;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 28px rgba(7, 13, 27, 0.14);
+  border-color: rgba(0,0,0,.13);
+}
+.dashboard-card header h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-primary,#1f283f);
+}
+.dashboard-card small { color: var(--text-muted,#768399); }
+.placeholder {
+  color: #7a8ba4;
+  font-size: .86rem;
+  margin: .5rem 0 0;
+}
+
+/* Widget khusus */
+#github-calendar-wrap { min-height: 225px; }
+.wakatime-widget { min-height: 190px; border: 1px dashed #cdd9e6; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #6c7c95; background: #f8fbff; }
+
+.tech-progress { margin: .7rem 0; }
+.tech-progress label { display: flex; justify-content: space-between; font-size: .86rem; color:#334667; margin-bottom: .35rem; }
+.progress { background: rgba(134, 148, 170, 0.16); border-radius: 999px; height: 11px; overflow: hidden; }
+.progress span {
+  display: block;
+  height: 100%;
+  width: calc(var(--p, 0) * 1%);
+  background: linear-gradient(90deg,#3369ff,#15baff);
+  border-radius: 999px;
+  transition: width .7s ease;
+}
