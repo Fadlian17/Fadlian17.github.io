@@ -71,25 +71,70 @@ sr.reveal('.skills__data, .work__img, .blog__card, .contact__input',{interval: 2
 function renderQAMetricsChart() {
   const ctx = document.getElementById('qaMetricsChart');
   if (!ctx || typeof Chart === 'undefined') return;
-  new Chart(ctx, {
+
+  // Destroy existing chart if it exists
+  if (ctx.chart) {
+    ctx.chart.destroy();
+  }
+
+  const isMobile = window.innerWidth <= 576;
+  const chartSize = isMobile ? 180 : 250;
+
+  ctx.chart = new Chart(ctx, {
     type: 'doughnut',
     data: {
       labels: ['Automated', 'Manual'],
       datasets: [{
         label: 'Test Coverage',
-        data: [85, 15], // Ubah jika perlu
+        data: [85, 15],
         backgroundColor: ['#36a2eb','#ff6384'],
         hoverBackgroundColor: ['#1e78d2','#d8476c'],
+        borderWidth: 2,
+        borderColor: '#ffffff'
       }]
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false,
       plugins: {
-        legend: { position: 'bottom' },
-        tooltip: { callbacks: { label: function(ctx){ return `${ctx.label}: ${ctx.parsed}%`; } } }
+        legend: {
+          position: isMobile ? 'bottom' : 'bottom',
+          labels: {
+            padding: isMobile ? 10 : 20,
+            font: {
+              size: isMobile ? 11 : 12
+            }
+          }
+        },
+        tooltip: {
+          callbacks: {
+            label: function(ctx){
+              return `${ctx.label}: ${ctx.parsed}%`;
+            }
+          },
+          titleFont: {
+            size: isMobile ? 12 : 14
+          },
+          bodyFont: {
+            size: isMobile ? 11 : 12
+          }
+        }
+      },
+      layout: {
+        padding: isMobile ? 10 : 20
       }
     }
   });
+
+  // Handle window resize
+  const resizeHandler = () => {
+    const newIsMobile = window.innerWidth <= 576;
+    if (newIsMobile !== isMobile) {
+      renderQAMetricsChart(); // Re-render with new settings
+    }
+  };
+
+  window.addEventListener('resize', resizeHandler);
 }
 
 function setupGithubCalendar() {

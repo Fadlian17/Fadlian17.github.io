@@ -1530,6 +1530,340 @@ body.dark-mode .l-header {
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-body.dark-mode .nav__logo {
-  color: var(--first-color, hsl(224, 89%, 60%));
+/* ===== RESPONSIVE DASHBOARD ===== */
+@media screen and (max-width: 576px) {
+  #dashboard {
+    padding: 2rem 0.5rem 2rem;
+  }
+  
+  #dashboard .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  #dashboard .dashboard-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  
+  .dashboard-grid {
+    gap: 0.75rem;
+  }
+  
+  .dashboard-card {
+    padding: 0.875rem;
+    border-radius: 12px;
+  }
+  
+  .dashboard-card header h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .dashboard-card small {
+    font-size: 0.75rem;
+  }
+  
+  /* Tech progress improvements */
+  .tech-progress label {
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .tech-progress label span {
+    font-size: 0.75rem;
+  }
+  
+  .progress {
+    height: 8px;
+  }
+  
+  /* Widget adjustments */
+  #github-calendar-wrap {
+    min-height: 180px;
+  }
+  
+  .wakatime-widget {
+    min-height: 150px;
+    padding: 0.5rem;
+  }
+  
+  .placeholder {
+    font-size: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 577px) {
+  #dashboard {
+    padding: 2.5rem 1rem 2rem;
+  }
+  
+  .dashboard-grid {
+    gap: 0.875rem;
+  }
+  
+  .dashboard-card {
+    padding: 1rem;
+  }
+  
+  #github-calendar-wrap {
+    min-height: 200px;
+  }
+  
+  .wakatime-widget {
+    min-height: 170px;
+  }
+}
+
+/* ===== RESPONSIVE SIDEBAR ACTIONS ===== */
+@media screen and (max-width: 576px) {
+  .sidebar__actions {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  
+  .language-toggle {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    margin-right: 0;
+    min-width: 50px;
+  }
+  
+  .theme-toggle {
+    padding: 0.4rem;
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .sidebar__logo .nav__logo {
+    font-size: 1.3rem;
+  }
+  
+  .sidebar__link {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== RESPONSIVE WORK SECTION ===== */
+@media screen and (max-width: 576px) {
+  .work__container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .work__overlay span {
+    font-size: 0.9rem;
+  }
+  
+  .work__btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* ===== RESPONSIVE SKILLS SECTION ===== */
+@media screen and (max-width: 576px) {
+  .skills__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .skills__data {
+    padding: 0.75rem 1rem;
+  }
+  
+  .skills__names {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .skills__icon {
+    font-size: 1.8rem;
+  }
+  
+  .skills__name {
+    font-size: 0.9rem;
+  }
+  
+  .skills__percentage {
+    font-size: 0.85rem;
+  }
+  
+  .tools__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  
+  .tool__item {
+    padding: 0.75rem;
+  }
+  
+  .tool__item i {
+    font-size: 1.8rem;
+  }
+  
+  .tool__item span {
+    font-size: 0.75rem;
+  }
+}
+
+/* ===== RESPONSIVE HOME SECTION ===== */
+@media screen and (max-width: 576px) {
+  .home {
+    padding: 3rem 0 2rem;
+    row-gap: 2rem;
+  }
+  
+  .home__title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .home__social {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .home__social-icon {
+    font-size: 1.3rem;
+  }
+  
+  .home__img {
+    width: 220px;
+    bottom: 0;
+  }
+}
+
+/* ===== RESPONSIVE ABOUT SECTION ===== */
+@media screen and (max-width: 576px) {
+  .about__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .about__img img {
+    width: 180px;
+  }
+}
+
+/* ===== RESPONSIVE FOOTER ===== */
+@media screen and (max-width: 576px) {
+  .footer {
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+  
+  .footer__title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer__social {
+    margin-bottom: 1.5rem;
+  }
+  
+  .footer__icon {
+    font-size: 1.3rem;
+    margin: 0 0.75rem;
+  }
+  
+  .footer__copy {
+    font-size: 0.75rem;
+  }
+}
+
+/* ===== RESPONSIVE MODAL ===== */
+@media screen and (max-width: 576px) {
+  .project-modal__content {
+    margin: 5% auto;
+    width: 95%;
+    max-height: 85vh;
+  }
+  
+  .project-modal__header {
+    padding: 1.5rem 1rem 1rem;
+  }
+  
+  .project-modal__header h2 {
+    font-size: 1.4rem;
+  }
+  
+  .project-modal__body {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .project-modal__info {
+    gap: 1rem;
+  }
+  
+  .project-modal__description h3,
+  .project-modal__tech h3,
+  .project-modal__links h3 {
+    font-size: 1rem;
+  }
+  
+  .tech-stack {
+    gap: 0.5rem;
+  }
+  
+  .tech-item {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+  }
+  
+  .project-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .project-link {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* ===== GENERAL MOBILE IMPROVEMENTS ===== */
+@media screen and (max-width: 576px) {
+  .section {
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .section-title::after {
+    width: 50px;
+    top: 2rem;
+  }
+  
+  .bd-grid {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  .l-main {
+    padding: 1rem 0.5rem;
+  }
+  
+  /* Improve readability */
+  p, .skills__text, .about__text {
+    line-height: 1.6;
+    font-size: 0.9rem;
+  }
+  
+  /* Better button spacing */
+  .button, .contact__button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
 }
