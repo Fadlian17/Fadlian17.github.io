@@ -176,5 +176,6 @@ function initDashboardWidgets() {
 }
 
 window.addEventListener('DOMContentLoaded', function() {
-  setTimeout(initDashboardWidgets, 280); // meminimalisir blocking paint
+  // Dashboard temporarily disabled
+  // setTimeout(initDashboardWidgets, 280);
 });

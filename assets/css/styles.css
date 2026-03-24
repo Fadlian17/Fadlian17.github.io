@@ -1252,6 +1252,7 @@ body.dark-mode .language-toggle:hover {
 #dashboard {
   padding: 3rem 1rem 2.5rem;
   background: var(--bg-secondary, rgba(255,255,255,.06));
+  display: none; /* Temporarily disabled */
 }
 #dashboard .section-title {
   margin-bottom: 0.35rem;
