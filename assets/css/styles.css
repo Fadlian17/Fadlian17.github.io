@@ -1314,3 +1314,222 @@ body.dark-mode .language-toggle:hover {
   border-radius: 999px;
   transition: width .7s ease;
 }
+
+/* ===== Sidebar ===== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background: var(--card-bg, #ffffff);
+  border-right: none;
+  box-shadow: none;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  padding: 1rem 1rem 2rem;
+  overflow-y: auto;
+}
+
+.sidebar.show {
+  transform: translateX(0);
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sidebar__logo {
+  text-align: center;
+  padding: 0.5rem 0 1rem;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+}
+
+.sidebar__logo .nav__logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--first-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sidebar__logo .nav__logo:hover {
+  color: var(--second-color);
+}
+
+.sidebar__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.sidebar__item {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar__link {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--text-primary, #1f283f);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: 500;
+}
+
+.sidebar__link:hover,
+.sidebar__link.active {
+  background-color: var(--first-color, hsl(224, 89%, 60%));
+  color: #ffffff;
+}
+
+.sidebar__actions {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Header adjustments */
+.l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height, 3rem);
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav__logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--first-color);
+  text-decoration: none;
+}
+
+.sidebar-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+/* Main content adjustments */
+.l-main {
+  margin-left: 0;
+  margin-top: var(--header-height, 3rem);
+  padding: 2rem 1rem;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .sidebar {
+    transform: translateX(0);
+  }
+  .sidebar-toggle {
+    display: none;
+  }
+  .l-main {
+    margin-left: 280px;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    width: 250px;
+  }
+  .l-main {
+    margin-left: 0;
+  }
+}
+
+/* ===== Dark Mode for Sidebar ===== */
+body.dark-mode .sidebar {
+  background: var(--card-bg, #1f2937);
+  border-right: none;
+}
+
+body.dark-mode .sidebar__logo {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+body.dark-mode .sidebar__link {
+  color: var(--text-primary, #e5e7eb);
+}
+
+body.dark-mode .sidebar__link:hover,
+body.dark-mode .sidebar__link.active {
+  background-color: var(--first-color, hsl(224, 89%, 60%));
+  color: #ffffff;
+}
+
+body.dark-mode .sidebar-toggle {
+  color: var(--text-primary, #e5e7eb);
+}
+
+body.dark-mode .sidebar-toggle:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* ===== Dark Mode for Dashboard ===== */
+body.dark-mode .dashboard-card {
+  background: var(--card-bg, #1f2937);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+body.dark-mode .dashboard-card header h3 {
+  color: var(--text-primary, #e5e7eb);
+}
+
+body.dark-mode .dashboard-card small {
+  color: var(--text-muted, #9ca3af);
+}
+
+body.dark-mode .placeholder {
+  color: #9ca3af;
+}
+
+body.dark-mode .wakatime-widget {
+  border: 1px dashed #6b7280;
+  background: #374151;
+  color: #9ca3af;
+}
+
+body.dark-mode .tech-progress label {
+  color: #d1d5db;
+}
+
+/* ===== Dark Mode for Header ===== */
+body.dark-mode .l-header {
+  background: rgba(31, 41, 55, 0.9);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+body.dark-mode .nav__logo {
+  color: var(--first-color, hsl(224, 89%, 60%));
+}

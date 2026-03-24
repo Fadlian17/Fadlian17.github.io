@@ -19,32 +19,36 @@
     <body>
         <!--===== HEADER =====-->
         <header class="l-header glass-header">
-            <nav class="nav bd-grid">
-                <div>
+            <div class="header__content">
+                <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
+                    <i class='bx bx-menu'></i>
+                </button>
+            </div>
+        </header>
+
+        <!--===== SIDEBAR =====-->
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <div class="sidebar__logo">
                     <a href="#" class="nav__logo">Fadli</a>
                 </div>
-
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link active" data-translate="nav.home">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link" data-translate="nav.about">About</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link" data-translate="nav.skills">Skills</a></li>
-                        <li class="nav__item"><a href="#work" class="nav__link" data-translate="nav.work">Work</a></li>
-                        <li class="nav__item"><a href="#dashboard" class="nav__link" data-translate="nav.dashboard">Dashboard</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link" data-translate="nav.contact">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="nav__actions">
+                <ul class="sidebar__list">
+                    <li class="sidebar__item"><a href="#home" class="sidebar__link active" data-translate="nav.home">Home</a></li>
+                    <li class="sidebar__item"><a href="#about" class="sidebar__link" data-translate="nav.about">About</a></li>
+                    <li class="sidebar__item"><a href="#skills" class="sidebar__link" data-translate="nav.skills">Skills</a></li>
+                    <li class="sidebar__item"><a href="#work" class="sidebar__link" data-translate="nav.work">Work</a></li>
+                    <li class="sidebar__item"><a href="#dashboard" class="sidebar__link">Dashboard</a></li>
+                    <li class="sidebar__item"><a href="#contact" class="sidebar__link" data-translate="nav.contact">Contact</a></li>
+                </ul>
+                <div class="sidebar__actions">
                     <button id="language-toggle" class="language-toggle" aria-label="Toggle language">
                         <span class="flag-icon flag-icon-gb" id="flag-icon"></span>
                         <span class="lang-text">EN</span>
                     </button>
                     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><i class='bx bx-moon'></i></button>
-                    <div class="nav__toggle" id="nav-toggle"><i class='bx bx-menu'></i></div>
                 </div>
             </nav>
-        </header>
+        </aside>
 
         <main class="l-main">
             <!--===== HOME =====-->
@@ -362,7 +366,7 @@
                 <a href="#" class="footer__icon" aria-label="Instagram"><i class='bx bxl-instagram' ></i></a>
                 <a href="#" class="footer__icon" aria-label="Twitter"><i class='bx bxl-twitter' ></i></a>
             </div>
-            <p class="footer__copy">&copy; 2024 Fadli. All rights reserved.</p>
+            <p class="footer__copy">&copy; <span id="current-year"></span> Fadli. All rights reserved.</p>
             <button id="backToTop" class="back-to-top" aria-label="Back to top"><i class='bx bx-chevron-up'></i></button>
         </footer>
 
@@ -742,6 +746,9 @@
             gsap.from('.home__img', { duration: 1, x: 100, opacity: 0, delay: 0.5, ease: 'power2.out' });
             gsap.from('.home__social a', { duration: 1, y: 30, opacity: 0, stagger: 0.2, delay: 1, ease: 'power2.out' });
         });
+
+        // Auto-update copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
         </script>
     </body>
 </html>

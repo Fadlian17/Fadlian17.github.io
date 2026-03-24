@@ -1,25 +1,25 @@
-/*===== MENU SHOW =====*/ 
-const showMenu = (toggleId, navId) =>{
+/*===== SIDEBAR SHOW =====*/
+const showSidebar = (toggleId, sidebarId) => {
     const toggle = document.getElementById(toggleId),
-    nav = document.getElementById(navId)
+    sidebar = document.getElementById(sidebarId)
 
-    if(toggle && nav){
+    if(toggle && sidebar){
         toggle.addEventListener('click', ()=>{
-            nav.classList.toggle('show')
+            sidebar.classList.toggle('show')
         })
     }
 }
-showMenu('nav-toggle','nav-menu')
+showSidebar('sidebar-toggle','sidebar')
 
-/*==================== REMOVE MENU MOBILE ====================*/
-const navLink = document.querySelectorAll('.nav__link')
+/*==================== REMOVE SIDEBAR MOBILE ====================*/
+const sidebarLink = document.querySelectorAll('.sidebar__link')
 
-function linkAction(){
-    const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
-    navMenu.classList.remove('show')
+function sidebarLinkAction(){
+    const sidebar = document.getElementById('sidebar')
+    // When we click on each sidebar__link, we remove the show class
+    sidebar.classList.remove('show')
 }
-navLink.forEach(n => n.addEventListener('click', linkAction))
+sidebarLink.forEach(n => n.addEventListener('click', sidebarLinkAction))
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
@@ -33,9 +33,9 @@ function scrollActive(){
         sectionId = current.getAttribute('id')
 
         if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active')
+            document.querySelector('.sidebar a[href*=' + sectionId + ']').classList.add('active')
         }else{
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active')
+            document.querySelector('.sidebar a[href*=' + sectionId + ']').classList.remove('active')
         }
     })
 }
